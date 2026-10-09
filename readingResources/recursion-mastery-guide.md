@@ -78,6 +78,7 @@ The typical mistake: forgetting to pass an **index** so the array itself doesn't
 **Step 5 — Progress:** `i + 1 > i`, moves toward `arr.length`. ✅
 
 ```java
+
 public class SumArray {
     // Contract: returns sum of arr[i..arr.length-1]
     public static int sum(int[] arr, int i) {
