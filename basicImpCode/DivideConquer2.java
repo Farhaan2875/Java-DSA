@@ -1,3 +1,4 @@
+package basicImpCode;
 public class DivideConquer2 {
     //seaarch in rotated sorted array --> VERY IMP FOR INTERVIEWS -> wont use linear search -> O(n) tc but we will solve in O(nlogn) tc (more optimised) --> WILL USE MODIFIED BINARY SEARCH
     public static int search(int arr[], int tar, int si, int ei){

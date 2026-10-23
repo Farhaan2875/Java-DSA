@@ -1,3 +1,4 @@
+package basicImpCode;
 public class stringFn {
     public static String StringCompression(String str){
         StringBuilder su = new StringBuilder("");

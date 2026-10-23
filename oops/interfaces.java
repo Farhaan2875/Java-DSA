@@ -1,3 +1,5 @@
+package oops;
+
 public class interfaces {
     public static void main(String args[]){
         //INTERFACES -> pure form of abstarction

@@ -1,3 +1,4 @@
+package basicImpCode;
 import java.util.*;
 public class simpleprob {
     public static void main(String args[]){

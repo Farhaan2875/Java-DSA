@@ -1,3 +1,4 @@
+package basicImpCode;
 public class patterns {
     public static void main(String args[]){
         // patterns are not extensively aasked in palcement --> dont do too much for placements

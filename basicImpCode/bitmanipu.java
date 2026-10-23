@@ -1,3 +1,4 @@
+package basicImpCode;
 public class bitmanipu {
 
     public static void oddeven(int n){

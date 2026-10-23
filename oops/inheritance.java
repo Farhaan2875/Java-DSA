@@ -1,3 +1,5 @@
+package oops;
+
 public class inheritance {
     public static void main(String args[]){
         //INHERITANCE --> when properties and methods of base/parent class are passed on to a derived/child class

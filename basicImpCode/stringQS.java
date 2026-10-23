@@ -1,3 +1,4 @@
+package basicImpCode;
 public class stringQS {
 
     public static boolean palindrome(String str){

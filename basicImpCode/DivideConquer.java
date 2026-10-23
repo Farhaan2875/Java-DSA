@@ -1,3 +1,4 @@
+package basicImpCode;
 public class DivideConquer {
 //CALL BY REFERENCE(IN FUCNTIONS) IS IMPLEMETED IN JAVA INDIRECTLT IN CASE OF ARRAYS AND OBJECTS
 public static void mergeSort(int arr[], int si, int ei){
