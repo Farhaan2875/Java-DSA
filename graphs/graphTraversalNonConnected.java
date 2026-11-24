@@ -1,6 +1,6 @@
 package graphs;
 import java.util.*;
-public class g2 {
+public class graphTraversalNonConnected {
     static class Edge{
         int src;
         int dest;
@@ -14,7 +14,10 @@ public class g2 {
     public static void dfs(ArrayList<Edge>[] graph){
         boolean vis[] = new boolean[graph.length];
         for(int i=0;i<graph.length;i++){
-            dfsUtil(graph,i,vis);
+            if(!vis[i]){ //performs dfs on all the componens
+                // one dfs call in for one connected component
+                dfsUtil(graph,i,vis);
+            }
         }
     }
     public static void dfsUtil(ArrayList<Edge>[] graph, int curr, boolean visited[]){
@@ -34,18 +37,18 @@ public class g2 {
         for(int i=0;i<graph.length;i++){
             if(!vis[i]){ //performs bfs on all the componens
                 // one bfs call in for one connected component
-                bfs(graph);
+                bfsUtil(graph, vis, i);
             }
         }
     }
-    public static void bfsUtil(ArrayList<Edge>[] graph, boolean vis[]){
+    public static void bfsUtil(ArrayList<Edge>[] graph, boolean vis[], int src){
         //tc - > O(V + E) -> fro adjacency list (our case)
         // tc -> o(v^2) -> if matrix was used
         Queue<Integer> q = new LinkedList<>();
 
         //we take source as zero -> you can take any vertex and add it first in the queue
 
-        q.add(0);
+        q.add(src);
         while(!q.isEmpty()){
             int curr = q.remove();
             if(!vis[curr]){

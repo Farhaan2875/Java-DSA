@@ -55,13 +55,13 @@ public class bt {
 
         }
 
-        public static void levelorder(Node root){
+        public static void levelorder(Node root){ // bfs traversal trees
             if(root == null){
                 return;
             }
             Queue<Node> q = new LinkedList<>();
             q.add(root);
-            q.add(null);
+            q.add(null); //null to the queue as a marker to indicate the end of a level.
             while(!q.isEmpty()){
                 Node currNode = q.remove();
                 if(currNode == null){
