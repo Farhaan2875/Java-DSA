@@ -25,7 +25,7 @@ public class Graph{
     } // tc - > O(V+E)
     
     public static void bfs(ArrayList<Edge>[] graph){
-        //tc - > O(V + E) -> fro adjacency list (our case)
+        //tc - > O(V + E) -> for adjacency list (our case)
         // tc -> o(v^2) -> if matrix was used
         Queue<Integer> q = new LinkedList<>();
         boolean vis[] = new boolean[graph.length]; //by default bool array contains false in java

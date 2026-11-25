@@ -31,7 +31,59 @@ public class g4 {
         graph[4].add(new Edge(4,3));
 
     }
+    public static void topSortUtil(ArrayList<Edge>[] graph, int curr, boolean[] vis, Stack<Integer> stack) {
+        vis[curr] = true;
+        for(int i=0;i<graph[curr].size();i++) {
+            Edge e = graph[curr].get(i);
+            if(!vis[e.dest]) {
+                topSortUtil(graph, e.dest, vis, stack);
+            }
+        }
+        stack.push(curr);
+        return;
+    }
+    public static void topologicalSort(ArrayList<Edge>[] graph) { // O(V + E)
+        boolean[] vis = new boolean[graph.length];
+        Stack<Integer> stack = new Stack<>();
 
+        for(int i=0;i<graph.length;i++) {
+            if(!vis[i]) {
+                topSortUtil(graph, i, vis, stack); // modified dfs
+            }
+        }
+
+        while(!stack.isEmpty()) {
+            System.out.println(stack.pop() + " ");
+        }
+    }
+    public static boolean isCycleDirected(ArrayList<Edge>[] graph) { // FOR DIRECTED GRAPH
+        boolean[] vis = new boolean[graph.length];
+        boolean[] stack = new boolean[graph.length];
+
+        for(int i=0;i<graph.length;i++) {
+            if(!vis[i]) {
+                if(isCycleDirectedUtil(graph, i, vis, stack)) { // for connected components
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public static boolean isCycleDirectedUtil(ArrayList<Edge>[] graph, int curr, boolean[] vis, boolean[] stack) {
+        vis[curr] = true;
+        stack[curr] = true;
+        for(int i=0;i<graph[curr].size();i++) {
+            Edge e = graph[curr].get(i);
+            if(stack[e.dest]) {
+                return true;
+            }
+            if(!vis[e.dest] && isCycleDirectedUtil(graph, e.dest, vis, stack)) {
+                return true;
+            }
+        }
+        stack[curr] = false;
+        return false;
+    }
     public static boolean isBipartite(ArrayList<Edge>[] graph){
         int col[] = new int[graph.length];
         for(int i=0;i<col.length;i++){
@@ -60,6 +112,7 @@ public class g4 {
         }
         return true; //nothing wrong means bipartite
     }
+
     public static void main(String args[]){
 
         int V = 5;

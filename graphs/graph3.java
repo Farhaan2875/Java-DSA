@@ -31,7 +31,7 @@ public class graph3 {
         graph[4].add(new Edge(4,3));
     }
 
-    public static boolean detectCycle(ArrayList<Edge> graph[]){
+    public static boolean detectCycle(ArrayList<Edge> graph[]){ // FOR UNDIRECTED GRAPH
         boolean vis[] = new boolean[graph.length]; //initially all false
         for(int i=0;i<graph.length;i++){
             if(!vis[i]){ ///this fucntion is for conected components
